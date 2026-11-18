@@ -24,20 +24,6 @@ if (!gh_is_dev()) {
 $path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
 $path = '/' . trim($path, '/');
 
-// Static assets and the mail-log inspector are served directly by the PHP server.
-if ($path === '/run-test') {
-    $db = gh_db();
-    echo "Projects:\n";
-    print_r($db->query("SELECT id, name FROM projects")->fetchAll(PDO::FETCH_ASSOC));
-    echo "\nRooms:\n";
-    print_r($db->query("SELECT * FROM project_chat_rooms")->fetchAll(PDO::FETCH_ASSOC));
-    echo "\nMembers:\n";
-    print_r($db->query("SELECT * FROM project_chat_members")->fetchAll(PDO::FETCH_ASSOC));
-    echo "\nUsers:\n";
-    print_r($db->query("SELECT id, name, role FROM users")->fetchAll(PDO::FETCH_ASSOC));
-    exit;
-}
-
 if (preg_match('#^/assets/#', $path) || in_array($path, ['/favicon.ico', '/robots.txt', '/sitemap.xml'])) {
     return false;
 }
@@ -83,10 +69,6 @@ $routes = [
     '/api/dashboard-action'=> ['api/dashboard-action', null],
     '/api/project-chats' => ['api/project-chats',  null],
     '/api/portal'         => ['../client-dashboard/api/portal', null],
-    '/fix'                => ['assets/fix-chats', null],
-    '/db-test'            => ['assets/check_chats', null],
-    
-    '/setup-accounts'    => ['setup-accounts',     null],
     '/migrate'           => ['migrate',            null],
 ];
 
