@@ -1,0 +1,33 @@
+# Green Homes runtime & build files
+.env
+.env.*
+!.env.example
+storage/mail/
+*.log
+*.zip
+*.bak
+.DS_Store
+cookies.txt
+headers.txt
+pass.txt
+
+# Security & Credentials
+fcm_service_account.json
+src/fcm_service_account.json
+*.keystore
+*.jks
+keystore.properties
+mobile-app/android/keystore.properties
+mobile-app/android/*.keystore
+
+# IDE & AI agent caches
+.agents/
+.kilo/
+.vscode/
+
+# Mobile App & Node dependencies
+node_modules/
+mobile-app/node_modules/
+mobile-app/android/build/
+mobile-app/android/app/build/
+mobile-app/jdk21/

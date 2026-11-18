@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-label="Green Homes mark">
+  <g stroke="#1c6b54" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Roof -->
+    <path d="M28 50 L60 22 L92 50" />
+    <!-- House body (left wall, floor) -->
+    <path d="M32 50 L32 96 L88 96" />
+    <!-- Leaf inside -->
+    <path d="M40 86 C 40 60, 70 50, 88 44 C 82 76, 64 86, 40 86 Z" />
+    <path d="M44 82 L82 50" />
+    <!-- Small chimney dot -->
+    <circle cx="46" cy="32" r="2.5" fill="#1c6b54" />
+  </g>
+</svg>

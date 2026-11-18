@@ -1,0 +1,22 @@
+{
+  "name": "green-homes-app",
+  "version": "1.0.0",
+  "description": "Green Homes Client Dashboard - Android App",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build needed - using hosted web app'"
+  },
+  "author": "Green Homes",
+  "license": "ISC",
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.4.2",
+    "@capacitor/core": "^8.4.2",
+    "@capacitor/push-notifications": "^8.1.2",
+    "@capacitor/splash-screen": "^8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.2"
+  }
+}

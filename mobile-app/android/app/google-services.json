@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "5158097596",
+    "project_id": "green-homes-ae55f",
+    "storage_bucket": "green-homes-ae55f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5158097596:android:a6cbce884cb052183ab6b9",
+        "android_client_info": {
+          "package_name": "homes.thegreen.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnV2n9EElA-wyk4-MFLRtqovfTlkT2Tu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

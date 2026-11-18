@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* Base Glass panel */
+    .glass-panel {
+        @apply bg-white/50 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-2xl;
+    }
+
+    /* Darker glass variant */
+    .glass-panel-dark {
+        @apply bg-gray-900/50 backdrop-blur-md border border-gray-700/50 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] rounded-2xl text-white;
+    }
+
+    /* Navbars / Headers (typically less rounded, more sticky) */
+    .glass-nav {
+        @apply bg-white/60 backdrop-blur-lg border-b border-white/50 shadow-sm sticky top-0 z-50;
+    }
+
+    /* Dropdowns / Modals */
+    .glass-dropdown {
+        @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-xl rounded-xl overflow-hidden;
+    }
+
+    /* Inputs */
+    .glass-input {
+        @apply bg-white/40 border border-white/60 rounded-xl focus:ring-2 focus:ring-indigo-400/50 focus:border-indigo-400/50 shadow-inner backdrop-blur-sm transition-all text-gray-800 placeholder-gray-500 w-full px-4 py-2;
+    }
+
+    /* Buttons */
+    .glass-button {
+        @apply bg-white/50 backdrop-blur-md border border-white/60 shadow-sm rounded-xl font-medium text-gray-700 hover:bg-white/70 hover:shadow-md transition-all active:scale-95 px-4 py-2 inline-flex items-center justify-center;
+    }
+
+    .glass-button-primary {
+        @apply bg-gradient-to-br from-indigo-500/90 to-purple-600/90 backdrop-blur-md border border-white/30 shadow-md rounded-xl font-medium text-white hover:from-indigo-500 hover:to-purple-600 hover:shadow-lg transition-all active:scale-95 px-4 py-2 inline-flex items-center justify-center;
+    }
+
+    .glass-button-danger {
+        @apply bg-gradient-to-br from-red-500/90 to-rose-600/90 backdrop-blur-md border border-white/30 shadow-md rounded-xl font-medium text-white hover:from-red-500 hover:to-rose-600 hover:shadow-lg transition-all active:scale-95 px-4 py-2 inline-flex items-center justify-center;
+    }
+
+    /* Table */
+    .glass-table-container {
+        @apply overflow-x-auto rounded-2xl border border-white/60 shadow-lg bg-white/30 backdrop-blur-md;
+    }
+    
+    .glass-table {
+        @apply w-full text-left text-sm text-gray-700 whitespace-nowrap;
+    }
+    
+    .glass-table th {
+        @apply bg-white/40 border-b border-white/50 px-6 py-4 font-semibold text-gray-900 tracking-wider uppercase text-xs;
+    }
+    
+    .glass-table td {
+        @apply border-b border-white/30 px-6 py-4;
+    }
+    
+    .glass-table tr:hover {
+        @apply bg-white/50 transition-colors;
+    }
+    
+    /* Badges */
+    .glass-badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/50 border border-white/60 backdrop-blur-sm text-gray-800;
+    }
+    .glass-badge-success {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100/60 border border-green-200/60 backdrop-blur-sm text-green-800;
+    }
+    .glass-badge-warning {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100/60 border border-yellow-200/60 backdrop-blur-sm text-yellow-800;
+    }
+    .glass-badge-danger {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100/60 border border-red-200/60 backdrop-blur-sm text-red-800;
+    }
+    .glass-badge-info {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100/60 border border-blue-200/60 backdrop-blur-sm text-blue-800;
+    }
+
+    /* Background Animation Mesh */
+    .bg-mesh {
+        background-color: #f3f4f6;
+        background-image: 
+            radial-gradient(at 40% 20%, hsla(228,100%,74%,0.25) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, hsla(189,100%,56%,0.25) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, hsla(355,100%,93%,0.35) 0px, transparent 50%),
+            radial-gradient(at 80% 50%, hsla(340,100%,76%,0.25) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(22,100%,77%,0.25) 0px, transparent 50%),
+            radial-gradient(at 80% 100%, hsla(242,100%,70%,0.25) 0px, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(343,100%,76%,0.25) 0px, transparent 50%);
+        background-attachment: fixed;
+    }
+}

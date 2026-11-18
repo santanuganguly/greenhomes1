@@ -1,0 +1,33 @@
+{
+  "appId": "homes.thegreen.app",
+  "appName": "Green Homes",
+  "webDir": "www",
+  "server": {
+    "url": "https://app.thegreen.homes",
+    "cleartext": false,
+    "androidScheme": "https",
+    "allowNavigation": [
+      "app.thegreen.homes"
+    ]
+  },
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#219653"
+  },
+  "plugins": {
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    },
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "launchAutoHide": true,
+      "backgroundColor": "#FFFFFF",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "FIT_CENTER",
+      "showSpinner": false,
+      "splashFullScreen": true,
+      "splashImmersive": true
+    }
+  }
+}
+

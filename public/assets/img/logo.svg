@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 140" aria-label="Green Homes by Green Hill Group">
+  <g stroke="#1c6b54" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M50 88 L96 50 L142 88" />
+    <path d="M56 88 L56 116 L136 116" />
+    <path d="M68 110 C 68 86, 96 78, 124 72 C 118 100, 96 110, 68 110 Z" />
+    <path d="M72 108 L120 80" />
+  </g>
+  <text x="166" y="80" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="34" fill="#1c6b54" letter-spacing="2">GREEN HOMES</text>
+  <text x="166" y="108" font-family="'Inter', system-ui, sans-serif" font-weight="500" font-size="13" fill="#2fa37f" letter-spacing="3">BY GREEN HILL GROUP</text>
+</svg>

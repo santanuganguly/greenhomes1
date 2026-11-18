@@ -1,0 +1,1 @@
+<?php require_once __DIR__.'/../src/bootstrap.php'; require_once __DIR__.'/../src/chat.php'; echo json_encode(chat_can_access(1, 1)); ?>

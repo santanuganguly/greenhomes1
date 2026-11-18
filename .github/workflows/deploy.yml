@@ -1,0 +1,75 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create .env
+        run: |
+          cat > .env << EOF
+          GH_DB_HOST=localhost
+          GH_DB_PORT=3306
+          GH_DB_NAME=${{ secrets.DB_NAME }}
+          GH_DB_USER=${{ secrets.DB_USER }}
+          GH_DB_PASS=${{ secrets.DB_PASS }}
+          GH_APP_URL=https://thegreen.homes
+          GH_APP_ENV=production
+          GH_CONTACT_PHONE="+91 9046665254"
+          GH_CONTACT_EMAIL=contact@thegreen.homes
+          GH_CONTACT_ADDRESS="5th Floor, Beekay Centerio, Beside Payel Cinema Hall, Sevoke Road, Siliguri, 734001"
+          GH_NOTIFY_TO=contact@thegreen.homes
+          GH_NOTIFY_FROM="Green Homes <no-reply@thegreen.homes>"
+          GH_MAIL_LOG_ONLY=false
+          GH_GOOGLE_SHEETS_API_URL="https://script.google.com/macros/s/AKfycbzIXWsJkhsuLkEwzbUhHHSq8HZByMkaN6xaCzq3fLj6r-G2j84UDjrHo_L9JTEZEpsa/exec"
+          GH_BANK_NAME="State Bank of India"
+          GH_ACCOUNT_NAME="Green Homes"
+          GH_ACCOUNT_NO="12345678901234"
+          GH_IFSC="SBIN0001234"
+          GH_UPI_ID="greenhomes@upi"
+          GH_GSTIN="19AABCT1234F1Z5"
+          EOF
+
+      - name: Deploy main website
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: ftps
+          local-dir: ./public/
+          server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+
+      - name: Deploy backend
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: ftps
+          local-dir: ./
+          server-dir: /
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            public/**
+            client-dashboard/**
+            sql/**
+            README.md
+            router.php
+            .env.example
+            .github/**
