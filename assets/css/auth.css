@@ -1,0 +1,7 @@
+/* Auth pages (login / signup) — minimal, centered card */
+.auth-page { min-height: calc(100vh - 72px - 240px); display: flex; align-items: center; padding: 48px 0; background: var(--gh-green-50); }
+.auth-card { max-width: 440px; width: 100%; margin: 0 auto; background: #fff; border: 1px solid var(--gh-line); border-radius: var(--gh-radius); padding: 36px; box-shadow: var(--gh-shadow-sm); }
+.auth-card h1 { font-size: 28px; margin-bottom: 8px; }
+.auth-card p.lead { color: var(--gh-ink-soft); margin-bottom: 24px; font-size: 15px; }
+.auth-card__alt { text-align: center; margin-top: 18px; font-size: 14px; color: var(--gh-ink-soft); }
+.auth-card__divider { text-align: center; margin: 18px 0 12px; font-size: 12px; color: var(--gh-muted); text-transform: uppercase; letter-spacing: .14em; }

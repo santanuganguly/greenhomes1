@@ -1,0 +1,21 @@
+/* Admin panel reuses qtable / status-pill from dashboard.css. Add admin-specific bits below. */
+
+.admin { padding: 60px 0; background: var(--gh-green-50); min-height: calc(100vh - 72px); }
+.admin__head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+.admin__head h1 { font-size: 28px; }
+.admin__head p { color: var(--gh-ink-soft); margin: 0; }
+.admin__section { margin-top: 48px; }
+.admin__section h2 { font-size: 22px; margin-bottom: 16px; }
+
+.admin-tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--gh-line); margin-bottom: 24px; }
+.admin-tabs a { padding: 12px 18px; font-weight: 600; color: var(--gh-ink-soft); border-bottom: 2px solid transparent; }
+.admin-tabs a.is-active { color: var(--gh-green-700); border-bottom-color: var(--gh-green-700); }
+
+.contact-msg { background: #fff; border: 1px solid var(--gh-line); border-radius: var(--gh-radius); padding: 20px; }
+.contact-msg__head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.contact-msg__head strong { color: var(--gh-green-900); }
+.contact-msg__head .meta { font-size: 12px; color: var(--gh-muted); }
+.contact-msg__subject { font-weight: 600; margin: 4px 0 8px; }
+.contact-msg__body { font-size: 14px; color: var(--gh-ink-soft); white-space: pre-wrap; }
+.contact-msg__actions { margin-top: 12px; display: flex; gap: 12px; }
+.contact-msg__actions a { font-size: 13px; }
