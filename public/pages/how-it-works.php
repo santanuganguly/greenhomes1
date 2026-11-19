@@ -14,15 +14,15 @@ gh_header(['title' => 'How it Works: Construction Process', 'active' => 'how', '
       <!-- Stage 01 -->
       <div class="step">
         <div class="step__header">
-          <span class="step__code">Stage 01 · Feasibility</span>
+          <span class="step__code">Stage 01 · Requirement</span>
           <div class="step__num">01</div>
         </div>
-        <h3>Plot Survey &amp; Soil Testing</h3>
-        <p>Our engineer visits your plot to test the soil, measure exact boundaries, and check SMC or Panchayat building rules before planning begins.</p>
+        <h3>Share your requirement</h3>
+        <p>20-minute call or a quick form. We listen first, no sales pitch. You tell us about your plot, your family, your must-haves, and your timeline. We tell you honestly if we're a fit.</p>
         <ul class="step__deliverables">
-          <li>Soil strength test report</li>
-          <li>Land boundary &amp; level check</li>
-          <li>Rough starting budget estimate</li>
+          <li>20-minute discovery call or form</li>
+          <li>Plot, family &amp; timeline review</li>
+          <li>Honest fit &amp; feasibility assessment</li>
         </ul>
       </div>
 
@@ -32,27 +32,27 @@ gh_header(['title' => 'How it Works: Construction Process', 'active' => 'how', '
           <span class="step__code">Stage 02 · Design</span>
           <div class="step__num">02</div>
         </div>
-        <h3>Architectural Plans &amp; 3D Elevations</h3>
+        <h3>Site visit &amp; design</h3>
         <p>Our architect visits the plot, measures, and prepares concept drawings and 2D/3D plans. Two rounds of revisions are included before we lock the design.</p>
         <ul class="step__deliverables">
-          <li>Custom 2D room floor plans</li>
-          <li>Realistic 3D front house views</li>
-          <li>Pillar &amp; beam structural drawings</li>
+          <li>On-site plot inspection &amp; measurements</li>
+          <li>Concept drawings &amp; 2D/3D floor plans</li>
+          <li>Two revision rounds included</li>
         </ul>
       </div>
 
       <!-- Stage 03 -->
       <div class="step">
         <div class="step__header">
-          <span class="step__code">Stage 03 · Approvals</span>
+          <span class="step__code">Stage 03 · Contract</span>
           <div class="step__num">03</div>
         </div>
-        <h3>Sanctions &amp; Fixed-Price Contract</h3>
+        <h3>Fixed-price contract</h3>
         <p>You receive a per-sqft quote with a complete bill of materials, a milestone payment schedule, and a guaranteed handover date. Your dedicated project manager is named in the contract.</p>
         <ul class="step__deliverables">
-          <li>Complete SMC/Panchayat plan approval</li>
-          <li>Fixed material list with brand names</li>
-          <li>Guaranteed timeline &amp; payment stages</li>
+          <li>Per-sqft quote with complete bill of materials</li>
+          <li>Milestone-based payment schedule</li>
+          <li>Named project manager &amp; handover date</li>
         </ul>
       </div>
 
@@ -62,27 +62,27 @@ gh_header(['title' => 'How it Works: Construction Process', 'active' => 'how', '
           <span class="step__code">Stage 04 · Construction</span>
           <div class="step__num">04</div>
         </div>
-        <h3>Civil Construction &amp; RCC Framing</h3>
+        <h3>Construction</h3>
         <p>Daily site photos and weekly quality-check reports land in your dashboard. Material deliveries are photographed on arrival. Milestone payments release only after you sign off on each phase.</p>
         <ul class="step__deliverables">
-          <li>Certified steel &amp; concrete strength tests</li>
-          <li>Hidden inside-wall wiring &amp; pipework</li>
-          <li>Weekly progress photos on your dashboard</li>
+          <li>Daily site photos &amp; weekly quality reports</li>
+          <li>Delivery verification photographs</li>
+          <li>Payments release only after your sign-off</li>
         </ul>
       </div>
 
       <!-- Stage 05 -->
       <div class="step">
         <div class="step__header">
-          <span class="step__code">Stage 05 · Quality</span>
+          <span class="step__code">Stage 05 · Audit</span>
           <div class="step__num">05</div>
         </div>
-        <h3>470-Point Engineering Audit</h3>
-        <p>Before handover, an independent inspector runs 470+ quality checks covering structure, plumbing, wiring, waterproofing, and finishing. If anything isn't right, we fix it at our cost.</p>
+        <h3>Independent quality audit</h3>
+        <p>Before handover, an independent auditor runs 470+ quality checks: concrete, steel, plumbing pressure, electrical, waterproofing, finishes. Snags are fixed at our cost, not yours.</p>
         <ul class="step__deliverables">
-          <li>470+ point quality inspection report</li>
-          <li>Water pipe leak &amp; pressure testing</li>
-          <li>Bathroom &amp; roof waterproofing checks</li>
+          <li>470+ independent quality check points</li>
+          <li>Concrete, plumbing, electrical &amp; waterproofing</li>
+          <li>All snags rectified at our cost</li>
         </ul>
       </div>
 
@@ -92,12 +92,12 @@ gh_header(['title' => 'How it Works: Construction Process', 'active' => 'how', '
           <span class="step__code">Stage 06 · Handover</span>
           <div class="step__num">06</div>
         </div>
-        <h3>Key Handover &amp; 5-Year Warranty</h3>
-        <p>Keys, municipal completion documents, electrical circuit diagrams, plumbing maps, and a signed 5-year structural warranty certificate protecting your home.</p>
+        <h3>Move in &amp; warranty</h3>
+        <p>Keys, appliance manuals, finish schedules, and warranty cards. A comprehensive 5-year warranty, and a direct phone line to your PM for the first year.</p>
         <ul class="step__deliverables">
-          <li>House keys &amp; completion certificate</li>
-          <li>Final wiring &amp; plumbing layout maps</li>
-          <li>Signed 5-year structural warranty</li>
+          <li>Keys, appliance manuals &amp; finish schedules</li>
+          <li>Comprehensive 5-year warranty</li>
+          <li>Direct phone line to your PM for year one</li>
         </ul>
       </div>
     </div>

@@ -46,21 +46,22 @@ gh_header(['title' => 'About Green Homes: Construction Division of Green Hill Gr
   transform: scale(1.025);
 }
 
-.about-cap-grid {
+.approach-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-@media (max-width: 900px) {
-  .about-cap-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 768px) {
+  .approach-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
-@media (max-width: 600px) {
-  .about-cap-grid { grid-template-columns: 1fr; }
-}
-
-.about-cap-card {
+.approach-card {
   background: #ffffff;
   border: 1px solid var(--gh-line);
   border-radius: var(--gh-radius);
@@ -68,56 +69,95 @@ gh_header(['title' => 'About Green Homes: Construction Division of Green Hill Gr
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.about-cap-card:hover {
+.approach-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--gh-shadow-sm);
   border-color: var(--gh-green-200);
 }
 
-.about-cap-card .code {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.approach-card__icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
   color: var(--gh-green-700);
-  margin-bottom: 10px;
-  display: block;
+  margin-bottom: 14px;
 }
 
-.about-cap-card h3 {
-  font-size: 17px;
+.approach-card__icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--gh-green-700);
+  stroke-width: 2;
+}
+
+.approach-card h3 {
   font-family: var(--font-body);
+  font-size: 17px;
   font-weight: 600;
   color: var(--gh-green-900);
   margin-bottom: 8px;
 }
 
-.about-cap-card p {
+.approach-card p {
   font-size: 14px;
   line-height: 1.55;
   color: var(--gh-ink-soft);
+  margin: 0;
 }
 
 .about-cta {
-  background: var(--gh-green-900);
-  color: #ffffff;
-  padding: 80px 0;
+  position: relative;
+  padding: 104px 0;
   text-align: center;
+  color: #ffffff;
+  background: linear-gradient(rgba(10, 30, 22, 0.82), rgba(10, 30, 22, 0.88)), url('/assets/img/about-home-evening.jpg?v=2') center 40% / cover no-repeat;
+  overflow: hidden;
+  border-top: 1px solid var(--gh-line);
 }
 
 .about-cta h2 {
   color: #ffffff;
-  font-size: clamp(28px, 4vw, 40px);
-  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.5vw, 44px);
+  line-height: 1.2;
+  max-width: 720px;
+  margin: 0 auto 18px;
+  text-wrap: balance;
 }
 
-.about-cta p {
-  color: rgba(255, 255, 255, 0.82);
+.about-cta p.about-cta__lead {
+  color: rgba(255, 255, 255, 0.9);
   font-size: 16.5px;
-  max-width: 620px;
+  max-width: 680px;
+  margin: 0 auto 20px;
+  line-height: 1.65;
+}
+
+.about-cta__tagline {
+  color: var(--gh-gold);
+  font-size: 15px;
+  font-weight: 500;
   margin: 0 auto 36px;
-  line-height: 1.6;
+  display: block;
+}
+
+.about-cta__tagline a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.about-cta .gh-btn--ghost {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+}
+
+.about-cta .gh-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: #ffffff;
 }
 </style>
 
@@ -126,7 +166,7 @@ gh_header(['title' => 'About Green Homes: Construction Division of Green Hill Gr
     <div class="gh-grid gh-grid--2" style="align-items: center; gap: 48px;">
       <div class="reveal reveal-left">
         <span class="gh-eyebrow">Green Homes · Siliguri</span>
-        <h1>We build your dream home in North Bengal, from start to finish.</h1>
+        <h1>From Land to Landmark<br />We Build It All</h1>
         <p class="lead">
           As part of <a href="https://greenhillgroup.in" target="_blank" rel="noopener" style="font-weight:600; text-decoration: underline;">Green Hill Group</a>, we bring 15 years of trusted local building experience to your project. You bring the vision and the plot; we take care of the design, legal paperwork, and complete construction.
         </p>
@@ -161,59 +201,79 @@ gh_header(['title' => 'About Green Homes: Construction Division of Green Hill Gr
   </div>
 </section>
 
-<!-- Engineering Standards Grid -->
+<!-- Our Approach Section -->
 <section class="gh-section gh-section--soft">
   <div class="container">
     <div class="gh-section__head reveal reveal-up">
-      <span class="gh-eyebrow">Standards</span>
-      <h2>How We Build Safe &amp; Strong Homes</h2>
-      <p>We follow strict safety rules and give you guarantees to protect your home.</p>
+      <span class="gh-eyebrow">Our Approach</span>
+      <h2>Built Around Your Needs</h2>
+      <p>Every project starts with understanding your requirements and ends with a space built to match your vision.</p>
     </div>
-    <div class="about-cap-grid reveal-stagger">
-      <div class="about-cap-card">
-        <span class="code">Standard 01 / Structural</span>
-        <h3>Earthquake-Safe Design</h3>
-        <p>We test the soil and build strong frames so your house stays safe during earthquakes.</p>
+    <div class="approach-grid reveal-stagger">
+      <div class="approach-card">
+        <div class="approach-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="5" r="2"/>
+            <path d="m3.9 19.5 6.3-13"/>
+            <path d="m20.1 19.5-6.3-13"/>
+            <path d="M6.8 14h10.4"/>
+          </svg>
+        </div>
+        <h3>Thoughtful Planning</h3>
+        <p>Every detail is considered before construction begins.</p>
       </div>
-      <div class="about-cap-card">
-        <span class="code">Standard 02 / Sanctions</span>
-        <h3>Government Approvals</h3>
-        <p>We handle all the building permits, drawings, and legal paperwork with local offices for you.</p>
+
+      <div class="approach-card">
+        <div class="approach-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Dedicated Management</h3>
+        <p>We coordinate materials, teams and on-site work.</p>
       </div>
-      <div class="about-cap-card">
-        <span class="code">Standard 03 / Procurement</span>
-        <h3>Certified Raw Materials</h3>
-        <p>We only use top-grade steel, cement, and factory-tested pipes that come with quality proof.</p>
+
+      <div class="approach-card">
+        <div class="approach-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3>Complete Transparency</h3>
+        <p>Clear costing and regular project updates.</p>
       </div>
-      <div class="about-cap-card">
-        <span class="code">Standard 04 / Transparency</span>
-        <h3>Daily Photo Updates</h3>
-        <p>We send you daily photos of your house and material deliveries on your phone so you always know what's happening.</p>
-      </div>
-      <div class="about-cap-card">
-        <span class="code">Standard 05 / Verification</span>
-        <h3>470-Point Safety Check</h3>
-        <p>Before handing over the keys, experts check 470 things, like water leaks, wiring, and wall strength.</p>
-      </div>
-      <div class="about-cap-card">
-        <span class="code">Standard 06 / Warranty</span>
-        <h3>5-Year Guarantee</h3>
-        <p>You get a written 5-year warranty that covers the foundation, main structure, and walls against any building defects.</p>
+
+      <div class="approach-card">
+        <div class="approach-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <h3>Quality at Every Stage</h3>
+        <p>Attention to workmanship and finishing throughout.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Clean Closing Section -->
+<!-- Closing CTA Section -->
 <section class="about-cta">
-  <div class="container">
-    <h2>Ready to build on your land?</h2>
-    <p>
-      Share your plot location and spatial requirements. Our senior engineering team will provide a transparent per-square-foot cost breakdown and feasibility review.
+  <div class="container reveal reveal-up">
+    <h2>Build Your Dream Home, On Your Own Land</h2>
+    <p class="about-cta__lead">
+      Your land deserves more than just a structure: it deserves a home built with passion, precision, and purpose. With Green Homes, you bring the dream, and we bring the expertise to make it a reality.
     </p>
+    <div class="about-cta__tagline">
+      Green Homes by <a href="https://greenhillgroup.in" target="_blank" rel="noopener">Green Hill Group</a> · Building Dreams, One Home at a Time.
+    </div>
     <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-      <a href="/estimator" class="gh-btn gh-btn--gold gh-btn--lg">Calculate Cost Estimate</a>
-      <a href="/contact" class="gh-btn gh-btn--ghost gh-btn--lg" style="color: #ffffff; border-color: rgba(255, 255, 255, 0.4);">Speak with an Engineer</a>
+      <a href="/estimator" class="gh-btn gh-btn--gold gh-btn--lg">Calculate cost</a>
+      <a href="/contact" class="gh-btn gh-btn--ghost gh-btn--lg">Talk to us</a>
     </div>
   </div>
 </section>

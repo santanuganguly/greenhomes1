@@ -50,8 +50,8 @@ gh_header(['title' => 'Contact', 'active' => 'contact', 'css' => 'contact']);
   <div class="container">
     <div class="gh-section__head contact-head">
       <span class="gh-eyebrow">Contact</span>
-      <h1>Direct engineering consultation for your build</h1>
-      <p>Speak directly with our project engineers. We evaluate your plot feasibility, municipal setbacks, and construction timeline.</p>
+      <h1>Talk to a Senior project manager</h1>
+      <p>No sales reps, no scripts. The same person who'll run your project is the person who'll pick up.</p>
     </div>
 
     <!-- Quick action links for mobile & desktop touch -->
@@ -93,7 +93,7 @@ gh_header(['title' => 'Contact', 'active' => 'contact', 'css' => 'contact']);
           </div>
         <?php endif; ?>
 
-        <div class="contact-form__legend">Send Us an Inquiry</div>
+        <div class="contact-form__legend">Talk to a Senior Project Manager</div>
 
         <div class="gh-form__row gh-form__row--2">
           <div class="gh-field">
@@ -160,7 +160,7 @@ gh_header(['title' => 'Contact', 'active' => 'contact', 'css' => 'contact']);
         </div>
 
         <button class="gh-btn gh-btn--primary" type="submit">
-          <span>Send Message</span>
+          <span>Talk to a Senior Project Manager</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -201,6 +201,28 @@ gh_header(['title' => 'Contact', 'active' => 'contact', 'css' => 'contact']);
           <p style="font-size:13px;color:var(--gh-muted);margin-top:8px;">
             <strong>Hours:</strong> Mon–Sat · 10:00 AM – 7:00 PM IST
           </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+            Follow Our Projects
+          </h3>
+          <p style="font-size:13.5px;color:var(--gh-ink-soft);margin-bottom:12px;">See live site construction photos, material walkthroughs, and finished homes:</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="https://www.facebook.com/profile.php?id=61593082011180" target="_blank" rel="noopener noreferrer" class="gh-btn gh-btn--sm" style="display:inline-flex;align-items:center;gap:6px;background:rgba(21,83,65,0.08);color:var(--gh-green-900);border:1px solid var(--gh-line);">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/greenhomessprojects/" target="_blank" rel="noopener noreferrer" class="gh-btn gh-btn--sm" style="display:inline-flex;align-items:center;gap:6px;background:rgba(21,83,65,0.08);color:var(--gh-green-900);border:1px solid var(--gh-line);">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              <span>Instagram</span>
+            </a>
+          </div>
         </div>
 
         <div class="contact-card">

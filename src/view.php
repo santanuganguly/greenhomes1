@@ -109,6 +109,20 @@ function gh_footer(): void
         <img src="/assets/img/logo-new.png?v=2" alt="Green Homes" style="height: 56px; width: auto; display: block;" />
       </a>
       <p class="gh-footer__about">Design-to-build home construction in Siliguri and North Bengal. Transparent pricing, quality checks at every stage, on-time delivery.</p>
+      <div class="gh-footer__social">
+        <a href="https://www.facebook.com/profile.php?id=61593082011180" target="_blank" rel="noopener noreferrer" aria-label="Green Homes on Facebook" class="gh-social-btn" title="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/greenhomessprojects/" target="_blank" rel="noopener noreferrer" aria-label="Green Homes on Instagram" class="gh-social-btn" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
+      </div>
     </div>
     <div>
       <h4>Services</h4>
@@ -135,7 +149,8 @@ function gh_footer(): void
         <li><a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', $phone)) ?>"><?= htmlspecialchars($phone) ?></a></li>
         <li><a href="mailto:<?= htmlspecialchars($email) ?>"><?= htmlspecialchars($email) ?></a></li>
         <li><a href="/contact">Contact form</a></li>
-        <li><a href="/estimator">Cost estimator</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61593082011180" target="_blank" rel="noopener noreferrer">Facebook ↗</a></li>
+        <li><a href="https://www.instagram.com/greenhomessprojects/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></li>
       </ul>
     </div>
   </div>

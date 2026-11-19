@@ -114,7 +114,7 @@ gh_header(['title' => 'Green Homes: Turnkey Home Construction in Siliguri', 'act
   <div class="container">
     <div class="gh-section__head reveal reveal-up">
       <span class="gh-eyebrow">Services</span>
-      <h2>Complete Plot-to-Home Construction</h2>
+      <h2>Complete Construction Solutions for Every Need</h2>
       <p>Home design-to-build, plus renovation and commercial work, all under one team.</p>
     </div>
     <div class="gh-grid gh-grid--3 reveal-stagger">
@@ -137,34 +137,110 @@ gh_header(['title' => 'Green Homes: Turnkey Home Construction in Siliguri', 'act
   </div>
 </section>
 
-<!-- Architectural Pillars -->
+<!-- Why Green Homes Section (Four Promises) -->
 <section class="gh-section">
   <div class="container">
     <div class="gh-section__head reveal reveal-up">
-      <span class="gh-eyebrow">Specifications</span>
-      <h2>Engineered for durability and clarity</h2>
-      <p>Four structural guarantees built into every contract we sign.</p>
+      <span class="gh-eyebrow">Why Green Homes</span>
+      <h2>Built on four promises</h2>
     </div>
     <div class="pillars reveal-stagger">
       <div class="pillar">
-        <span class="pillar__code">Spec 01 / Cost</span>
-        <h3>Transparent Bill of Quantities</h3>
-        <p>Complete line-item material schedules and locked per-sqft rates before construction begins. Zero surprise change orders.</p>
+        <div class="pillar__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3>Transparent pricing</h3>
+        <p>Per-sqft rates and a complete bill of materials up front. No surprise change orders, ever.</p>
       </div>
+
       <div class="pillar">
-        <span class="pillar__code">Spec 02 / Quality</span>
-        <h3>470+ Quality Checkpoints</h3>
-        <p>Documented soil testing, concrete grade cube tests, steel binding inspections, and waterproofing sign-offs logged to your portal.</p>
+        <div class="pillar__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <h3>Quality at every stage</h3>
+        <p>470+ documented quality checks per floor, with photos and sign-offs in your dashboard.</p>
       </div>
+
       <div class="pillar">
-        <span class="pillar__code">Spec 03 / Handover</span>
-        <h3>Structured Handover Schedule</h3>
-        <p>Milestone schedule with daily site photographs. Late completion incurs contractual credits payable to the client.</p>
+        <div class="pillar__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+            <polyline points="16 7 22 7 22 13"/>
+          </svg>
+        </div>
+        <h3>On-time handover</h3>
+        <p>Milestone-tracked schedule with daily site photos. Delays trigger credit, not excuses.</p>
       </div>
+
       <div class="pillar">
-        <span class="pillar__code">Spec 04 / Protection</span>
-        <h3>5-Year Structural Warranty</h3>
-        <p>Written warranty covering structure and workmanship for your home.</p>
+        <div class="pillar__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>5 years warranty</h3>
+        <p>Complete peace of mind with a comprehensive 5-year warranty on structure and workmanship for your home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Overview Section -->
+<section class="gh-section gh-section--soft">
+  <div class="container">
+    <div class="gh-section__head reveal reveal-up">
+      <span class="gh-eyebrow">Process</span>
+      <h2>From first call to keys in your hand</h2>
+      <p>Six steps. No guesswork. <a href="/how-it-works" style="color: var(--gh-green-700); font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">See the full process &rarr;</a></p>
+    </div>
+
+    <div class="home-process-grid reveal-stagger">
+      <!-- 01 -->
+      <div class="home-step">
+        <div class="home-step__num">01</div>
+        <h3>Share your requirement</h3>
+        <p>Tell us your plot, budget, and timeline, over a 20-minute call or the form below.</p>
+      </div>
+
+      <!-- 02 -->
+      <div class="home-step">
+        <div class="home-step__num">02</div>
+        <h3>Site visit &amp; design</h3>
+        <p>Our architect visits, measures, and prepares 2D/3D plans for your approval.</p>
+      </div>
+
+      <!-- 03 -->
+      <div class="home-step">
+        <div class="home-step__num">03</div>
+        <h3>Fixed-price contract</h3>
+        <p>You get a per-sqft quote, a milestone schedule, and a single project manager.</p>
+      </div>
+
+      <!-- 04 -->
+      <div class="home-step">
+        <div class="home-step__num">04</div>
+        <h3>Construction</h3>
+        <p>Daily site photos, weekly quality-check reports, milestone-based payments.</p>
+      </div>
+
+      <!-- 05 -->
+      <div class="home-step">
+        <div class="home-step__num">05</div>
+        <h3>Quality audit</h3>
+        <p>Independent 470+ checkpoint audit before handover. Snags fixed at our cost.</p>
+      </div>
+
+      <!-- 06 -->
+      <div class="home-step">
+        <div class="home-step__num">06</div>
+        <h3>Move in</h3>
+        <p>Keys, manuals, and a comprehensive 5-year warranty.</p>
       </div>
     </div>
   </div>
@@ -181,6 +257,10 @@ gh_header(['title' => 'Green Homes: Turnkey Home Construction in Siliguri', 'act
       <details open>
         <summary>What is included in a per-sqft quote?</summary>
         <p>Everything: design, materials, labor, plumbing &amp; electrical, doors &amp; windows, finishes, and project management. We send a line-item breakdown with your contract so you can see exactly what you are paying for.</p>
+      </details>
+      <details>
+        <summary>Do I need to have an architectural plan ready before contacting Green Homes?</summary>
+        <p>No. Green Homes can help you with the planning and design process, subject to the agreed scope of services.</p>
       </details>
       <details>
         <summary>How are payments structured?</summary>
