@@ -1,13 +1,128 @@
 <?php
 require_once __DIR__ . '/../../src/view.php';
+
+$leadOk = false;
+$leadError = null;
+$leadName = $leadPhone = $leadCity = '';
+$leadService = $_GET['service'] ?? 'home';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['form'] ?? '') === 'lead') {
+    require_once dirname(__DIR__, 2) . '/src/csrf.php';
+    csrf_verify($_POST['_csrf'] ?? null);
+    $leadName = trim($_POST['name'] ?? '');
+    $leadPhone = trim($_POST['phone'] ?? '');
+    $leadCity = trim($_POST['city'] ?? '');
+    $leadService = $_POST['service'] ?? 'home';
+    $notes = trim($_POST['notes'] ?? '');
+    if ($leadName === '' || $leadPhone === '' || $leadCity === '') {
+        $leadError = 'Please fill in your name, phone, and city.';
+    } else {
+        require_once dirname(__DIR__, 2) . '/src/repo/quotes.php';
+        require_once dirname(__DIR__, 2) . '/src/mail.php';
+        $leadData = [
+            'user_id' => null,
+            'name' => $leadName,
+            'email' => 'lead@webform.local',
+            'phone' => $leadPhone,
+            'city' => $leadCity,
+            'service_type' => in_array($leadService, ['home','renovation','commercial'], true) ? $leadService : 'home',
+            'plot_size' => null,
+            'bhk_type' => null,
+            'budget_band' => null,
+            'package' => null,
+            'estimate_low' => null,
+            'estimate_high' => null,
+            'notes' => $notes ?: 'Consultation request from Services page',
+        ];
+        $id = null;
+        try {
+            $id = quotes_create($leadData);
+        } catch (PDOException $e) {
+            error_log("Database connection failed for lead: " . $e->getMessage());
+        }
+        send_mail(
+            (string) gh_env('GH_NOTIFY_TO', gh_env('GH_CONTACT_EMAIL', 'contact@thegreen.homes')),
+            'New consultation request: ' . $leadName . ' (' . $leadCity . ')',
+            '<p>New consultation request from Services page:</p><ul><li>Name: ' . htmlspecialchars($leadName) . '</li><li>Phone: ' . htmlspecialchars($leadPhone) . '</li><li>City: ' . htmlspecialchars($leadCity) . '</li><li>Service: ' . htmlspecialchars($leadService) . '</li><li>Notes: ' . nl2br(htmlspecialchars($notes)) . '</li></ul><p>Lead ID: ' . ($id ?: 'N/A') . '</p>',
+            $leadPhone
+        );
+        require_once dirname(__DIR__, 2) . '/src/google_sheets.php';
+        gh_sheets_log_lead_quote(array_merge($leadData, ['id' => $id]));
+        $leadOk = true;
+        $leadName = $leadPhone = $leadCity = '';
+        $leadService = 'home';
+    }
+}
+
 gh_header(['title' => 'Construction Services: Green Homes Siliguri', 'active' => 'services', 'css' => 'services']);
 ?>
-<section class="gh-section">
-  <div class="container">
-    <div class="gh-section__head">
-      <span class="gh-eyebrow">Services</span>
+<section class="svc-hero" id="consultation">
+  <div class="container svc-hero__grid">
+    <div class="svc-hero__intro">
+      <span class="gh-eyebrow">Services · North Bengal</span>
       <h1>Turnkey residential and commercial construction services</h1>
-      <p>House designs, government plan approvals, complete construction, and a 5-year warranty, all backed by one clear agreement.</p>
+      <p class="lead">House designs, government plan approvals, complete construction, and a 5-year warranty, all backed by one clear agreement.</p>
+      
+      <div class="svc-hero__badges">
+        <a href="#home" class="svc-hero__badge">
+          <span class="svc-hero__badge-dot"></span>
+          <span>Residential Construction</span>
+        </a>
+        <a href="#renovation" class="svc-hero__badge">
+          <span class="svc-hero__badge-dot"></span>
+          <span>Renovation &amp; Remodeling</span>
+        </a>
+        <a href="#commercial" class="svc-hero__badge">
+          <span class="svc-hero__badge-dot"></span>
+          <span>Commercial Builds</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="svc-hero__form-card">
+      <h3>Request Site Consultation</h3>
+      <p style="font-size: 13.5px; color: var(--gh-muted); margin-bottom: 20px;">Same-day feasibility review and preliminary cost estimate.</p>
+      
+      <form class="gh-form" method="post" action="/services#consultation">
+        <input type="hidden" name="_csrf" value="<?= htmlspecialchars(csrf_token()) ?>" />
+        <input type="hidden" name="form" value="lead" />
+        
+        <?php if ($leadOk): ?>
+          <div class="gh-form__ok" style="margin-bottom: 16px;">Request received. A senior project manager will call you back.</div>
+        <?php elseif ($leadError): ?>
+          <div class="gh-form__error" style="margin-bottom: 16px;"><?= htmlspecialchars($leadError) ?></div>
+        <?php endif; ?>
+        
+        <div class="gh-field">
+          <label for="svc-name">Full Name</label>
+          <input id="svc-name" name="name" type="text" required autocomplete="name" enterkeyhint="next" value="<?= htmlspecialchars($leadName) ?>" placeholder="e.g. Ronit Sharma" />
+        </div>
+        
+        <div class="gh-field" style="margin-top: 14px;">
+          <label for="svc-phone">Phone Number</label>
+          <input id="svc-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" enterkeyhint="next" value="<?= htmlspecialchars($leadPhone) ?>" placeholder="+91 98765 43210" />
+        </div>
+        
+        <div class="gh-field" style="margin-top: 14px;">
+          <label for="svc-city">Plot Location (City / Town)</label>
+          <input id="svc-city" name="city" type="text" required enterkeyhint="next" value="<?= htmlspecialchars($leadCity) ?>" placeholder="Siliguri, Jalpaiguri, Matigara..." />
+        </div>
+        
+        <div class="gh-field" style="margin-top: 14px;">
+          <label for="svc-service">Service Required</label>
+          <select id="svc-service" name="service" style="width: 100%; height: 44px; padding: 0 12px; border-radius: var(--gh-radius-sm, 6px); border: 1px solid var(--gh-line); background: #ffffff; color: var(--gh-ink); font-size: 14px;">
+            <option value="home" <?= $leadService === 'home' ? 'selected' : '' ?>>New Home Construction</option>
+            <option value="renovation" <?= $leadService === 'renovation' ? 'selected' : '' ?>>Home Renovation &amp; Remodeling</option>
+            <option value="commercial" <?= $leadService === 'commercial' ? 'selected' : '' ?>>Commercial Construction</option>
+          </select>
+        </div>
+        
+        <button class="gh-btn gh-btn--primary gh-btn--block gh-btn--lg" type="submit" style="margin-top: 24px; width: 100%;">Book Consultation</button>
+        
+        <p style="font-size: 12px; color: var(--gh-muted); margin-top: 16px; line-height: 1.4; text-align: center;">
+          Direct communication with our senior engineering team. No sales cold calls.
+        </p>
+      </form>
     </div>
   </div>
 </section>
@@ -55,7 +170,10 @@ gh_header(['title' => 'Construction Services: Green Homes Siliguri', 'active' =>
         <li>Restoring old family homes without losing their original charm</li>
         <li>Room-by-room work so your family can keep living inside comfortably</li>
       </ul>
-      <a href="/contact?subject=Home+Renovation" class="gh-btn gh-btn--primary">Plan a Renovation</a>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="#consultation" class="gh-btn gh-btn--primary" onclick="var s=document.getElementById('svc-service'); if(s) s.value='renovation';">Plan a Renovation</a>
+        <a href="/contact?subject=Home+Renovation" class="gh-btn gh-btn--ghost">Contact Us</a>
+      </div>
     </div>
     <div class="svc__art">
       <img src="/assets/img/service-renovation.jpg?v=2" alt="Modern residential kitchen renovation and remodeling" loading="lazy" />
@@ -79,7 +197,10 @@ gh_header(['title' => 'Construction Services: Green Homes Siliguri', 'active' =>
         <li>SJDA and municipal statutory approvals</li>
         <li>Ongoing building maintenance even after we hand over the keys</li>
       </ul>
-      <a href="/contact?subject=Commercial+Construction" class="gh-btn gh-btn--primary">Request Commercial Proposal</a>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="#consultation" class="gh-btn gh-btn--primary" onclick="var s=document.getElementById('svc-service'); if(s) s.value='commercial';">Request Commercial Proposal</a>
+        <a href="/contact?subject=Commercial+Construction" class="gh-btn gh-btn--ghost">Contact Us</a>
+      </div>
     </div>
     <div class="svc__art">
       <img src="/assets/img/service-commercial.jpg?v=2" alt="Modern corporate office interior construction and fit-out" loading="lazy" />
